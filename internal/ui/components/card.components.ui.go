@@ -7,9 +7,11 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
+// Criação de cards
 func Card(titulo, texto, valor string) *widget.Card {
 
 	tituloCard := container.NewHBox(
+		// icone
 		widget.NewIcon(theme.AccountIcon()),
 		widget.NewLabelWithStyle(
 			texto,

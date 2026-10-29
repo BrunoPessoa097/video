@@ -1,14 +1,17 @@
 package main
 
 import (
+	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
-	"fyne.io/fyne/v2/widget"
+	"github.com/BrunoPessoa097/video/internal/ui/navegacao"
 )
 
 func main() {
 	a := app.New()
-	w := a.NewWindow("Hello World")
+	w := a.NewWindow("Video gestor")
+	w.Resize(fyne.NewSize(600, 600))
 
-	w.SetContent(widget.NewLabel("Hello World!"))
+	navegacao.Iniciar(w)
+
 	w.ShowAndRun()
 }

@@ -9,7 +9,8 @@ import (
 func main() {
 	a := app.New()
 	w := a.NewWindow("Video gestor")
-	w.Resize(fyne.NewSize(600, 600))
+	w.Resize(fyne.NewSize(800, 600))
+	w.SetFixedSize(true)
 
 	navegacao.Iniciar(w)
 

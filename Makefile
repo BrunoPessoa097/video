@@ -1,6 +1,7 @@
 .PHONY: run test build
 
 run:
+	clear
 	go run cmd/main.go
 
 tidy:

@@ -7,3 +7,9 @@ func InputSimples(placeholder string) *widget.Entry {
 	input.SetPlaceHolder(placeholder)
 	return input
 }
+
+func InputPass(placeholder string) *widget.Entry {
+	input := widget.NewPasswordEntry()
+	input.SetPlaceHolder(placeholder)
+	return input
+}

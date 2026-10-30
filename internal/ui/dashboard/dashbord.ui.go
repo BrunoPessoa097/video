@@ -10,7 +10,7 @@ import (
 
 // dashbord principal
 func Dashboard() fyne.CanvasObject {
-	tituloLabel := components.Label("Dashbord")
+	tituloLabel := components.Label("Visão Geral")
 	subtitulo := widget.NewLabel("Painel de gerenciamento")
 
 	// cabeçalho

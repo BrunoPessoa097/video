@@ -3,6 +3,7 @@ package dashboard
 import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/theme"
 	"github.com/BrunoPessoa097/video/internal/ui/components"
 )
 
@@ -16,10 +17,10 @@ func Dashboard() fyne.CanvasObject {
 	)
 
 	// inicio dos cards
-	pessoa := components.Card("Pessoas Cadastradas", "Equipe", "0 Pessoas")
-	funcoes := components.Card("Funções Cadastradas", "Equipe", "0 Funções")
-	dias := components.Card("Dias Cadastrado", "Planejados", "0 dias")
-	cargos := components.Card("Cargos Cadastrado", "Existentes", "0 Cargos")
+	pessoa := components.Card(components.Cards{Icone: theme.AccountIcon(), Titulo: "Pessoa", Subtitulo: "Equipe de Produção", Valor: 0, SubtituloValor: "Total de Pessoas Registradas"})
+	funcoes := components.Card(components.Cards{Icone: theme.MediaVideoIcon(), Titulo: "Função", Subtitulo: "Função Ativas", Valor: 0, SubtituloValor: "Total de Funções Registradas"})
+	dias := components.Card(components.Cards{Icone: theme.CalendarIcon(), Titulo: "Datas", Subtitulo: "Datas Escolhidas", Valor: 0, SubtituloValor: "Total de Datas Escolhidas"})
+	cargos := components.Card(components.Cards{Icone: theme.ComputerIcon(), Titulo: "Escolhidos", Subtitulo: "Escalas das pessoas", Valor: 0, SubtituloValor: "Total de Escalas Registradas"})
 
 	// alinhamento dos cards
 	cards := container.NewGridWithColumns(2, pessoa, funcoes, dias, cargos)

@@ -21,10 +21,15 @@ func Cadastro() fyne.CanvasObject {
 	senha := components.InputPass("Digite sua senha")
 	telefone := components.InputSimples("Digite seu telefone")
 
-	labels := map[string]*widget.Entry{
-		"Nome":     nome,
-		"Senha":    senha,
-		"Telefone": telefone,
+	labels := []components.CampoFormulario{
+		{
+			Label: "Nome", Input: nome,
+		},
+		{
+			Label: "Senha", Input: senha,
+		}, {
+			Label: "Telefo", Input: telefone,
+		},
 	}
 
 	formulario := components.Formulario(labels)
@@ -35,7 +40,7 @@ func Cadastro() fyne.CanvasObject {
 	return container.NewVBox(
 		container.NewCenter(titulo),
 		formulario,
-		botaoCadastar,
-		botaoReset,
+		container.NewPadded(botaoCadastar),
+		container.NewPadded(botaoReset),
 	)
 }

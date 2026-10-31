@@ -17,11 +17,11 @@ func Iniciar(w fyne.Window) {
 
 	navegar := func(tela string) {
 		switch tela {
-		case "Dashbord":
+		case "dashbord":
 			conteudo.Objects = []fyne.CanvasObject{
 				dashboard.Dashboard(),
 			}
-		case "Pessoa":
+		case "pessoa":
 			conteudo.Objects = []fyne.CanvasObject{
 				pessoa.Cadastro(),
 			}
@@ -30,7 +30,7 @@ func Iniciar(w fyne.Window) {
 		conteudo.Refresh()
 	}
 
-	tituloLabel := components.Label("DashBoard")
+	tituloLabel := components.LabelTitulo("DashBoard")
 
 	header := container.NewCenter(
 		tituloLabel,

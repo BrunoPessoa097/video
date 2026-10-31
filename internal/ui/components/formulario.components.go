@@ -1,20 +1,31 @@
 package components
 
-import "fyne.io/fyne/v2/widget"
+import (
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/widget"
+)
 
-func Formulario(campos map[string]*widget.Entry) *widget.Form {
-	entradas := []*widget.FormItem{}
+type CampoFormulario struct {
+	Label string
+	Input *widget.Entry
+}
 
-	for texto, input := range campos {
-		entradas = append(
-			entradas,
-			widget.NewFormItem(texto, input),
+func Formulario(campos []CampoFormulario) fyne.CanvasObject {
+	formulario := container.NewVBox()
+
+	for _, campo := range campos {
+		label := widget.NewLabel(campo.Label)
+
+		linha := container.New(
+			layout.NewFormLayout(),
+			label,
+			campo.Input,
 		)
-	}
 
-	formulario := widget.NewForm(
-		entradas...,
-	)
+		formulario.Add(linha)
+	}
 
 	return formulario
 }

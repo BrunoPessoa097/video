@@ -3,21 +3,16 @@ package dashboard
 import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/layout"
-	"fyne.io/fyne/v2/widget"
 	"github.com/BrunoPessoa097/video/internal/ui/components"
 )
 
 // dashbord principal
 func Dashboard() fyne.CanvasObject {
-	tituloLabel := components.Label("Visão Geral")
-	subtitulo := widget.NewLabel("Painel de gerenciamento")
+	tituloLabel := components.LabelTitulo("Visão Geral")
 
 	// cabeçalho
-	header := container.NewHBox(
+	header := container.NewCenter(
 		tituloLabel,
-		layout.NewSpacer(),
-		subtitulo,
 	)
 
 	// inicio dos cards
@@ -27,14 +22,10 @@ func Dashboard() fyne.CanvasObject {
 	cargos := components.Card("Cargos Cadastrado", "Existentes", "0 Cargos")
 
 	// alinhamento dos cards
-	cards1 := container.NewGridWithColumns(2, pessoa, funcoes)
-	cards2 := container.NewGridWithColumns(2, dias, cargos)
-
-	// container cards
-	cards := container.NewVBox(cards1, cards2)
+	cards := container.NewGridWithColumns(2, pessoa, funcoes, dias, cargos)
 
 	return container.NewVBox(
 		header,
-		cards,
+		container.NewPadded(cards),
 	)
 }

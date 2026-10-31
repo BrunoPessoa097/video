@@ -2,6 +2,7 @@ package components
 
 import (
 	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 )
 
@@ -12,4 +13,11 @@ func Label(texto string) *widget.Label {
 		fyne.TextAlignCenter,
 		fyne.TextStyle{Bold: true},
 	)
+}
+
+func LabelTitulo(texto string) *widget.Label {
+	labelTitulo := Label(texto)
+	labelTitulo.SizeName = theme.SizeNameHeadingText
+
+	return labelTitulo
 }

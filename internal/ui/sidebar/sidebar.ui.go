@@ -10,15 +10,17 @@ import (
 
 func SideBar(navegar func(string)) fyne.CanvasObject {
 	titulo := components.Label("Gestor Video")
+	subtituloPessoa := components.Label("Pessoa")
 
 	menu := container.NewVBox(
 		titulo,
 		widget.NewSeparator(),
-		components.Botao("Dashbord", theme.HomeIcon(), func() {
-			navegar("Dashbord")
+		components.Botao("dashbord", theme.HomeIcon(), func() {
+			navegar("dashbord")
 		}),
-		components.Botao("Pessoa", theme.BrokenImageIcon(), func() {
-			navegar("Pessoa")
+		subtituloPessoa,
+		components.Botao("pessoa", theme.BrokenImageIcon(), func() {
+			navegar("pessoa")
 		}),
 	)
 

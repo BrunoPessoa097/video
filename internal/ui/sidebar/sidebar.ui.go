@@ -22,6 +22,9 @@ func SideBar(navegar func(string)) fyne.CanvasObject {
 		components.Botao("Cadastro", theme.BrokenImageIcon(), func() {
 			navegar("pessoa")
 		}),
+		components.Botao("Listagem", theme.BrokenImageIcon(), func() {
+			navegar("listagem")
+		}),
 	)
 
 	return container.NewPadded(menu)

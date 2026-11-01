@@ -1,10 +1,35 @@
 # Changelog
 
-Todas as mudanças relevantes deste projeto serão documentadas neste arquivo.
+Todas as alterações relevantes do projeto GestorVideo serão documentadas neste arquivo.
 
-Este projeto segue, quando aplicável, as convenções do [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e utiliza [Versionamento Semântico (SemVer)](https://semver.org/lang/pt-BR/).
+Este projeto segue as convenções do [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e utiliza [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
-## [Não lançado]
+## [Unreleased]
+
+### Planejado
+- Implementação do cadastro de pessoas.
+- Implementação da tela de funções.
+- Implementação da tela de dias disponíveis.
+
+## [0.2.0] - 2026-11-01
+
+### Added
+- Implementação da tela de listagem de pessoas.
+- Exibição das informações das pessoas em cards.
+
+### Changed
+- Melhorias na organização e estrutura das telas.
+- Ajustes no cabeçalho e alinhamento dos componentes.
+- Refinamento visual dos cards e botões.
+- Melhorias na disposição dos elementos da interface.
+
+## [0.1.0] - Data da release anterior
+
+### Added
+- Estrutura inicial da interface gráfica.
+- Implementação do dashboard.
+- Implementação da navegação lateral.
+- Criação dos componentes visuais reutilizáveis.
 
 ### Adicionado
 - Inicialização da documentação do projeto.

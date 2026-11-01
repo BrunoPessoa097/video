@@ -7,6 +7,7 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 )
 
@@ -61,5 +62,62 @@ func Card(c Cards) *widget.Card {
 		"",
 		"",
 		corpo,
+	)
+}
+
+func CardSimples(c Cards) fyne.CanvasObject {
+	headerTextTitulo := canvas.NewText(c.Titulo, color.White)
+	headerTextTitulo.TextSize = 20
+	headerTextTitulo.TextStyle.Bold = true
+	headerTextTitulo.Alignment = fyne.TextAlignLeading
+
+	headerTextSubtitulo := canvas.NewText(c.Subtitulo, color.Opaque)
+	headerTextSubtitulo.TextSize = 14
+
+	headerTxt := container.NewVBox(
+		headerTextTitulo,
+		headerTextSubtitulo,
+	)
+
+	icone := widget.NewIcon(c.Icone)
+	iconeContainer := container.NewGridWrap(
+		fyne.NewSize(58, 58),
+		icone,
+	)
+
+	botaoCad := Botao("Atualizar", theme.ConfirmIcon(), func() {
+
+	})
+	botaoRes := Botao("Excluir", theme.CancelIcon(), func() {
+
+	})
+
+	corpoBotoes := container.NewHBox(
+		botaoCad,
+		botaoRes,
+	)
+
+	grid := container.NewGridWrap(
+		fyne.NewSize(199, 32),
+		corpoBotoes,
+	)
+
+	// pessoa := container.NewHBox(
+	// 	iconeContainer,
+	// 	headerTxt,
+	// )
+
+	header := container.NewBorder(
+		nil,            // Top
+		nil,            // Bottom
+		iconeContainer, // Left
+		grid,           // Right
+		headerTxt,      // Center
+	)
+
+	return widget.NewCard(
+		"",
+		"",
+		header,
 	)
 }

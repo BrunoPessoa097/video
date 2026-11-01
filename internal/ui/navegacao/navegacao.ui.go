@@ -25,6 +25,10 @@ func Iniciar(w fyne.Window) {
 			conteudo.Objects = []fyne.CanvasObject{
 				pessoa.Cadastro(),
 			}
+		case "listagem":
+			conteudo.Objects = []fyne.CanvasObject{
+				pessoa.Listar(),
+			}
 		}
 
 		conteudo.Refresh()

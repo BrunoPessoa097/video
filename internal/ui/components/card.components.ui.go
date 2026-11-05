@@ -85,12 +85,8 @@ func CardSimples(c Cards) fyne.CanvasObject {
 		icone,
 	)
 
-	botaoCad := Botao("Atualizar", theme.ConfirmIcon(), func() {
-
-	})
-	botaoRes := Botao("Excluir", theme.CancelIcon(), func() {
-
-	})
+	botaoCad := Botao(BotaoCampos{Texto: "Atualizar", Icone: theme.ConfirmIcon(), Acao: func() {}})
+	botaoRes := Botao(BotaoCampos{Texto: "Excluir", Icone: theme.CancelIcon(), Acao: func() {}})
 
 	corpoBotoes := container.NewHBox(
 		botaoCad,
@@ -101,11 +97,6 @@ func CardSimples(c Cards) fyne.CanvasObject {
 		fyne.NewSize(199, 32),
 		corpoBotoes,
 	)
-
-	// pessoa := container.NewHBox(
-	// 	iconeContainer,
-	// 	headerTxt,
-	// )
 
 	header := container.NewBorder(
 		nil,            // Top

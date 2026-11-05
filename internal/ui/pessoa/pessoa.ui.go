@@ -34,8 +34,8 @@ func Cadastro() fyne.CanvasObject {
 
 	formulario := components.Formulario(labels)
 
-	botaoCadastar := components.Botao("Cadastro", theme.ConfirmIcon(), func() {})
-	botaoReset := components.Botao("Reset", theme.CancelIcon(), func() {})
+	botaoCadastar := components.Botao(components.BotaoCampos{Texto: "Cadastro", Icone: theme.ConfirmIcon(), Acao: func() {}})
+	botaoReset := components.Botao(components.BotaoCampos{Texto: "Reset", Icone: theme.CancelIcon(), Acao: func() {}})
 
 	return container.NewVBox(
 		container.NewCenter(titulo),

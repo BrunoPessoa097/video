@@ -8,10 +8,13 @@ import (
 	"github.com/BrunoPessoa097/video/internal/ui/components"
 )
 
+// menu lateral
 func SideBar(navegar func(string)) fyne.CanvasObject {
+	// titulos lateral
 	titulo := components.Label("Gestor Video")
 	subtituloPessoa := components.Label("Pessoa")
 
+	// criando menu lateral
 	menu := container.NewVBox(
 		titulo,
 		widget.NewSeparator(),
@@ -27,5 +30,6 @@ func SideBar(navegar func(string)) fyne.CanvasObject {
 		}}),
 	)
 
+	// criando menu
 	return container.NewPadded(menu)
 }

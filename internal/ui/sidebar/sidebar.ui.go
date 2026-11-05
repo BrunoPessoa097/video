@@ -15,16 +15,16 @@ func SideBar(navegar func(string)) fyne.CanvasObject {
 	menu := container.NewVBox(
 		titulo,
 		widget.NewSeparator(),
-		components.Botao("Dashbord", theme.HomeIcon(), func() {
+		components.Botao(components.BotaoCampos{Texto: "Dashbord", Icone: theme.HomeIcon(), Acao: func() {
 			navegar("dashbord")
-		}),
+		}}),
 		subtituloPessoa,
-		components.Botao("Cadastro", theme.BrokenImageIcon(), func() {
+		components.Botao(components.BotaoCampos{Texto: "Cadastro", Icone: theme.BrokenImageIcon(), Acao: func() {
 			navegar("pessoa")
-		}),
-		components.Botao("Listagem", theme.BrokenImageIcon(), func() {
+		}}),
+		components.Botao(components.BotaoCampos{Texto: "Listagem", Icone: theme.BrokenImageIcon(), Acao: func() {
 			navegar("listagem")
-		}),
+		}}),
 	)
 
 	return container.NewPadded(menu)

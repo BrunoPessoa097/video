@@ -5,6 +5,7 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
+// strutura BotaoCampos: texto(string), icone(fyne.Resource) e acao(func)
 type BotaoCampos struct {
 	Texto string
 	Icone fyne.Resource

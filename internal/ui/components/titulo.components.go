@@ -15,6 +15,7 @@ func Label(texto string) *widget.Label {
 	)
 }
 
+// label titulo
 func LabelTitulo(texto string) *widget.Label {
 	labelTitulo := Label(texto)
 	labelTitulo.SizeName = theme.SizeNameHeadingText

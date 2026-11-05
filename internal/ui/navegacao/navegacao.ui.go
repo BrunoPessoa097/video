@@ -11,10 +11,12 @@ import (
 
 // navegação de telas
 func Iniciar(w fyne.Window) {
+	// tela inicial
 	conteudo := container.NewStack(
 		dashboard.Dashboard(),
 	)
 
+	// navegação de telas
 	navegar := func(tela string) {
 		switch tela {
 		case "dashbord":
@@ -34,20 +36,26 @@ func Iniciar(w fyne.Window) {
 		conteudo.Refresh()
 	}
 
+	// titulo da tela
 	tituloLabel := components.LabelTitulo("DashBoard")
 
+	// cabeçalho
 	header := container.NewCenter(
 		tituloLabel,
 	)
 
+	// menu lateral
 	menu := sidebar.SideBar(navegar)
 
+	// corpo
 	corpo := container.NewHSplit(menu, conteudo)
 	corpo.SetOffset(0.22)
 
+	// tela principal
 	layoutPrincipal := container.NewBorder(
 		header, nil, nil, nil, corpo,
 	)
 
+	// telaa crição
 	w.SetContent(layoutPrincipal)
 }
